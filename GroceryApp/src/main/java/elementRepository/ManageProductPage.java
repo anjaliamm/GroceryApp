@@ -96,8 +96,6 @@ public class ManageProductPage {
 		return gu.verifyElementisUnchecked(unlimitedStockCheckbox);
 
 	}
-	public boolean verifyCategoryInTable() {
-		return gu.getTableColumnValue(tableCategory,"Grocery & Staples >> Oil");
-	}
+	
 
 }

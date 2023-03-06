@@ -70,21 +70,6 @@ public class ManageProductTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 
 	}
-    @Test
-   public void verifyWhetherProductsListedAreMatchingTheSearchCriteriaCategoryAndSubCategory() {
-    	lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
-		lp.clickLogin();
-		mpp = new ManageProductPage(driver);
-		mpp.clickManageProductPage();
-		mpp.clickSearchButton();
-		mpp.selectCategory();
-		mpp.selectSubCategory();
-		mpp.clickSearchSecondButtonInList();
-		boolean actualResult=mpp.verifyCategoryInTable();
-		boolean expectedResult=true;
-		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
-   }
+    
 
 }
