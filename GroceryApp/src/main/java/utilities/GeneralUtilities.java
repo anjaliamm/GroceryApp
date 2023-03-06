@@ -5,18 +5,15 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.sql.Driver;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-import dev.failsafe.internal.util.Assert;
+
 
 public class GeneralUtilities {
 	public String getElementText(WebElement element) {
@@ -85,7 +82,7 @@ public class GeneralUtilities {
 
 	public void mouseHoverElement(WebElement element, WebDriver driver) {
 		Actions action = new Actions(driver);
-		action.moveToElement(element).perform();
+		action.moveToElement(element).click().build().perform();
 
 	}
 
@@ -104,6 +101,11 @@ public class GeneralUtilities {
 		file.keyPress(KeyEvent.VK_ENTER);
 		file.keyRelease(KeyEvent.VK_ENTER);
 
+	}
+	public void pageScroll(WebDriver driver,WebElement element ) {
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollTo(0,"+element.getLocation().y+")");
+		element.click();
 	}
 
 	

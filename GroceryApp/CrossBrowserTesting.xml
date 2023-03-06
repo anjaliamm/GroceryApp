@@ -2,17 +2,15 @@
 	<test name="ChromeTest">
 		<parameter name="Browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.LoginPageTestCases"></class>
-			<class name="testCases.ManagePagesTestCases"></class>
-			<class name="testCases.ManageProductTestCases"></class>
+			<class name="testCases.ManageDeliveryBoyPageTestCases"></class>
+			
 		</classes>
 	</test>
 	<test name="EdgeTest">
 		<parameter name="Browser" value="Edge"></parameter>
 		<classes>
-			<class name="testCases.LoginPageTestCases"></class>
-			<class name="testCases.ManagePagesTestCases"></class>
-			<class name="testCases.ManageProductTestCases"></class>
+			<class name="testCases.ManageDeliveryBoyPageTestCases"></class>
+			
 		</classes>
 	</test>
 </suite>

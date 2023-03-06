@@ -46,7 +46,9 @@ public class LoginPageTestCases extends baseClass { // inheritance
 		lp.enterPassword("1234");
 		lp.clickLogin();
 		String actualResult = lp.verifyInvalidUsernamePasswordErrorMessage();
-		String expectedResult = "×\n" + "Alert!\n" + "Invalid Username/Password";
+		String expectedResult =   "×\n"
+				+ "Alert!\n"
+				+ "Invalid Username/Password";    
 		Assert.assertEquals(actualResult, expectedResult, "Username and password matches");
 
 	}

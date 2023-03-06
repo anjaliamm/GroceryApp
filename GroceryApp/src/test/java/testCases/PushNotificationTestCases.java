@@ -25,7 +25,9 @@ public class PushNotificationTestCases extends baseClass {
 		pp.enterDescription("This is description");
 		pp.clickSendButton();
 		String actualResult = pp.verifySuccessfulAlertMessage();
-		String expectedResult = "×\n" + "Alert!\n" + "Message send successfully";
+		String expectedResult ="×\n"
+				+ "Alert!\n"
+				+ "Message send successfully";
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
