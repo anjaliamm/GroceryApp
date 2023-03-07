@@ -10,6 +10,7 @@ import elementRepository.LoginPage;
 public class AdminUsersPageTestCases extends baseClass {
 	LoginPage lp;
 	AdminUsersPage au;
+	
   @Test
   public void selectDropdownValueOfUserType() {
 	  lp=new LoginPage(driver);
@@ -35,11 +36,11 @@ public class AdminUsersPageTestCases extends baseClass {
 	  au=new AdminUsersPage(driver);
 	  au.clickAdminUsersTile();
 	  au.clickNewButton();
-	  au.enterUsernameInAdminUsers("Sheeba");
-	  au.enterPasswordInAdminUsers("sheeba1234");
+	  au.enterUsernameInAdminUsers("vinitha");
+	  au.enterPasswordInAdminUsers("vinitha1234");
 	  au.chooseUserTypeFromDropdown("admin");
 	  au.clickSaveButton();
-	  String actualResult=au.alertMessageSuccessful();
+	  String actualResult=au.alertMessageSuccessfulWhenNewUserIsAdded();
 	  String expectedResult="×\n"
 				+ "Alert!\n"
 				+ "User Created Successfully";

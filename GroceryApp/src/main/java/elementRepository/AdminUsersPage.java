@@ -6,10 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.GeneralUtilities;
+import utilities.RandomDataGenerator;
 
 public class AdminUsersPage {
 	WebDriver driver;
 	GeneralUtilities gu = new GeneralUtilities();
+	RandomDataGenerator rg=new RandomDataGenerator();
 
 	public AdminUsersPage(WebDriver driver) {
 		this.driver = driver;
@@ -28,7 +30,7 @@ public class AdminUsersPage {
 	@FindBy(xpath="//button[@name='Create']")
 	WebElement saveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
-	WebElement alerMessage;
+	WebElement alertMessage;
 	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
 	WebElement usernameExistsAlert;
 
@@ -39,7 +41,8 @@ public class AdminUsersPage {
 		newButton.click();
 	}
 	public void enterUsernameInAdminUsers(String user) {
-		enterusername.sendKeys(user);
+		String randomString=rg.randomPassword();
+		enterusername.sendKeys(user+randomString);
 	}
 	public void enterPasswordInAdminUsers(String pass) {
 		enterpassword.sendKeys(pass);
@@ -48,12 +51,13 @@ public class AdminUsersPage {
 		return gu.selectElementValueFromDropdownUsingSelectByValue(userTypeDropdown, value);	
 	}
 	public void clickSaveButton() {
+		gu.pageScroll(driver,saveButton);
 		saveButton.click();
 	}
-	public String alertMessageSuccessful() {
-		return gu.getElementText(alerMessage);
-		
+	public String alertMessageSuccessfulWhenNewUserIsAdded() {
+		return gu.getElementText(alertMessage);
 	}
+
 	public String usernameAlreadyExistsMessage() {
 		return gu.getElementText(usernameExistsAlert);
 	}

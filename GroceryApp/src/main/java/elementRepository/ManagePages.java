@@ -1,20 +1,19 @@
 package elementRepository;
 
-import java.awt.AWTException;
-import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.ExcelRead;
+import utilities.ExplicitWait;
 import utilities.GeneralUtilities;
 
 public class ManagePages {
 	WebDriver driver;
 	GeneralUtilities gu = new GeneralUtilities();
 	ExcelRead er = new ExcelRead();
+	ExplicitWait ew = new ExplicitWait();
 
 	public ManagePages(WebDriver driver) {
 		this.driver = driver;
@@ -28,18 +27,19 @@ public class ManagePages {
 	WebElement newButton;
 	@FindBy(xpath = "//button[@aria-label='Style']")
 	WebElement styleTooltip;
-	@FindBy(xpath="(//input[@type='file'])[2]")
+	@FindBy(xpath = "(//input[@type='file'])[2]")
 	WebElement imgFile;
-	@FindBy(id="title")
+	@FindBy(id = "title")
 	WebElement enterTitle;
-	@FindBy(xpath="//div[@class='note-editable card-block']")
+	@FindBy(xpath = "//div[@class='note-editable card-block']")
 	WebElement enterDescription;
-	@FindBy(id="page")
+	@FindBy(id = "page")
 	WebElement enterPage;
-	@FindBy(xpath=" //button[@class='btn btn-danger']")
-    WebElement saveButton;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement saveButton;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alertMessageSuccessful;
+
 	public void clickManagePagesTile() {
 		managePagesTile.click();
 	}
@@ -52,29 +52,5 @@ public class ManagePages {
 		return gu.verifyElementToolTipValue(styleTooltip, value);
 	}
 
-	public void clickImgFile() {
-		imgFile.click();
-	}
 
-	public void imageUpload() throws AWTException {
-		gu.fileUploadingElement(driver, imgFile,System.getProperty("user.dir")+ "\\src\\main\\resources\\UploadFiles\\one.jpg");
-
-	}
-
-	public void clickSaveButton() {
-		saveButton.click();
-	}
-	public void enterTitleInTextbox(String titl) {
-	  enterTitle.sendKeys(titl);
-	}
-	public void enterDescriptionInTextbox(String des) {
-		enterDescription.sendKeys(des);
-	}
-	public void enterPageInTextBox(String pag) {
-		enterPage.sendKeys(pag);
-	}
-	public String getAlertMessageWhenFileUploadedSuccessfully() {
-		return gu.getElementText(alertMessageSuccessful);
-	}
-	
 }

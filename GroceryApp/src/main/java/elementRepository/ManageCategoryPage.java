@@ -1,6 +1,5 @@
 package elementRepository;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -28,7 +27,13 @@ public class ManageCategoryPage {
 	WebElement subcategoryoption;
 	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]")
 	List<WebElement> listSubCategory;
-   
+	@FindBy(xpath="(//a[@class='small-box-footer'])[4]")
+	WebElement categoryTile;
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Category/add']")
+	WebElement newButton;
+	@FindBy(xpath="(//input[@value='yes'])[1]")
+	WebElement yesRadioButton;
+    
 
 	public void clickManageCategoryTab() {
 		managecategorytab.click();
@@ -50,5 +55,14 @@ public class ManageCategoryPage {
 		return gu.verifyTextOfAlertElement(driver);
 
 	}
-	
+	public void clickManageCategoryTile() {
+		categoryTile.click();
+	}
+	public void clickNewButton() {
+		newButton.click();
+	}
+	public boolean isRadioButtonYesClicked() {
+		yesRadioButton.click();
+		return gu.isSelectedElementRadioButton(yesRadioButton);
+	}
 }

@@ -33,4 +33,5 @@ public class ManageCategoryTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 
 	}
+	
 }
