@@ -39,21 +39,21 @@ public class LoginPageTestCases extends baseClass { // inheritance
 				
 	}
 
-	@Test(groups= {"High"} )
-	public void verifyInValidCredentials() {
+	@Test(dataProvider="dataProvider",dataProviderClass=DataProviderTest.class )
+	public void verifyInValidCredentials(String user,String pass) {
 		lp = new LoginPage(driver);
-		lp.enterUsername("adwin");
-		lp.enterPassword("1234");
+		lp.enterUsername(user);
+		lp.enterPassword(pass);
 		lp.clickLogin();
 		String actualResult = lp.verifyInvalidUsernamePasswordErrorMessage();
-		String expectedResult =   "×\n"
+		String expectedResult ="×\n"
 				+ "Alert!\n"
-				+ "Invalid Username/Password";    
+				+ "Invalid Username/Password";
 		Assert.assertEquals(actualResult, expectedResult, "Username and password matches");
 
 	}
 
-	@Test
+	@Test(groups= {"High"} )
 	public void verifyTheBackgroundColorOfSignInButton() {
 		lp = new LoginPage(driver);
 		String actualResult = lp.verifyTheBackgroundColorOfSignInButtonInLoginPage();
