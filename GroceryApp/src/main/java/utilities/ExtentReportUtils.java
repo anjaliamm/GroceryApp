@@ -16,14 +16,14 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class ExtentReportUtils implements ITestListener {           //interface-without method body
-	ExtentSparkReporter sparkReporter;
-	ExtentReports reports;
-	ExtentTest test;
+public class ExtentReportUtils implements ITestListener {           //interface-without method body 
+	ExtentSparkReporter sparkReporter;                               //main classes used
+	ExtentReports reports;                                            //customizable HTML report for pie chart representation
+	ExtentTest test;                                             
 
 	public void configureReport() {
 		Date date = new Date();
-		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy_hhmmss");
+		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy_hhmmss"); //display the date and time taken for each test case execution
 		String strDate = formatter.format(date);
 
 		File reportPath = new File(System.getProperty("user.dir") + "//ExtentReport");
@@ -39,18 +39,18 @@ public class ExtentReportUtils implements ITestListener {           //interface-
 		reports.attachReporter(sparkReporter);
 
 		// System details
-		reports.setSystemInfo("PC Name", "ALViNs");
+		reports.setSystemInfo("PC Name", "ANJALIVIVEK");
 		reports.setSystemInfo("OS", "Windows 10");
 		sparkReporter.config().setDocumentTitle("Extent Report Sample");
 		sparkReporter.config().setReportName("Report Summary");
 		sparkReporter.config().setTheme(Theme.DARK);
 	}
 
-	public void onStart(ITestContext context) {
+	public void onStart(ITestContext context) {//executing preconditions of a test case
 		configureReport();
 	}
 
-	public void onFinish(ITestContext context) {
+	public void onFinish(ITestContext context) {     //executing post conditions
 		reports.flush(); //report file gets generated
 	}
 
@@ -60,7 +60,7 @@ public class ExtentReportUtils implements ITestListener {           //interface-
 
 	public void onTestSuccess(ITestResult result) {
 		test = reports.createTest(result.getName());
-		test.log(Status.PASS,
+		test.log(Status.PASS,                               //log method to log the status of each step
 				MarkupHelper.createLabel("Name of the Passed Test Case is : " + result.getName(), ExtentColor.GREEN));
 
 	}
