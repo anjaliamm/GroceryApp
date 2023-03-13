@@ -11,12 +11,13 @@ import constant.Constant;
 import elementRepository.LoginPage;
 import elementRepository.ManageCategoryPage;
 import utilities.ExcelRead;
+import utilities.RetryUtils;
 
 public class ManageCategoryTestCases extends baseClass {
 	LoginPage lp;
 	ManageCategoryPage mc;
 
-	@Test
+	@Test(retryAnalyzer=RetryUtils.class)
 	public void verifyTheTextOfAlertWhileClickingDeleteButtonInSubCategoryTable() throws IOException {
 		lp = new LoginPage(driver);
 		lp.enterUsername(ExcelRead.readStringData("Sheet1", 1, 0));
