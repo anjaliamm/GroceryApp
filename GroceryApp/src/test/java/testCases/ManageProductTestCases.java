@@ -14,8 +14,8 @@ public class ManageProductTestCases extends baseClass {
 	@Test
 	public void verifyWeightRadioButtonSelectedInPriceType() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mpp = new ManageProductPage(driver);
 		mpp.clickManageProductPage();
@@ -29,38 +29,38 @@ public class ManageProductTestCases extends baseClass {
 	@Test
 	public void verifyGroupSelectedInDropdown() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mpp = new ManageProductPage(driver);
 		mpp.clickManageProductPage();
 		mpp.clickNewButton();
 		mpp.clickGroupDropdown();
-		String actualResult = mpp.verifyGroupSelectedInDropdown("134");
-		String expectedResult = "discount";
+		String actualResult = mpp.verifyGroupSelectedInDropdown(Constant.GROUPSELECTED);
+		String expectedResult =Constant.GROUPSELECTEDINWORDS;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
 	@Test
 	public void verifyWeightUnitSelectedInDropdown() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mpp = new ManageProductPage(driver);
 		mpp.clickManageProductPage();
 		mpp.clickNewButton();
 		mpp.clickWeightUnitDropdown();
 		String actualResult = mpp.verifyWeightUnitSelectedInDropdown(2);
-		String expectedResult = "kg";
+		String expectedResult =Constant.KILOGRAMS;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
 	@Test
 	public void verifyUnlimitedStockCheckboxisSelected() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mpp = new ManageProductPage(driver);
 		mpp.clickManageProductPage();
