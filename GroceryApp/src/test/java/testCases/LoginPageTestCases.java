@@ -17,7 +17,7 @@ public class LoginPageTestCases extends baseClass { // inheritance
 	public void verifyTextOfSignInButton() {
 		lp = new LoginPage(driver);
 		String actualResult = lp.getTextOfSignInButton();
-		String expectedResult = "Sign In";
+		String expectedResult =Constant.SIGNIN;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 
 	}
@@ -34,7 +34,7 @@ public class LoginPageTestCases extends baseClass { // inheritance
 	public void verifyTheTextOfLoginPageTitle() {
 		lp = new LoginPage(driver);
 		String actualResult=lp.getTitleOfPage();
-		String expectedResult="7rmart supermarket";
+		String expectedResult=Constant.SUPERMARKETNAME;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 				
 	}
@@ -46,10 +46,8 @@ public class LoginPageTestCases extends baseClass { // inheritance
 		lp.enterPassword(pass);
 		lp.clickLogin();
 		String actualResult = lp.verifyInvalidUsernamePasswordErrorMessage();
-		String expectedResult ="×\n"
-				+ "Alert!\n"
-				+ "Invalid Username/Password";
-		Assert.assertEquals(actualResult, expectedResult, "Username and password matches");
+		String expectedResult =Constant.INVALIDUSERNAMEPASSWORDMESSAGE;
+		Assert.assertEquals(actualResult, expectedResult,Constant.PASSWORDANDUSERNAMEMATCHES);
 
 	}
 
@@ -57,7 +55,7 @@ public class LoginPageTestCases extends baseClass { // inheritance
 	public void verifyTheBackgroundColorOfSignInButton() {
 		lp = new LoginPage(driver);
 		String actualResult = lp.verifyTheBackgroundColorOfSignInButtonInLoginPage();
-		String expectedResult = "rgba(52, 58, 64, 1)";
+		String expectedResult =Constant.COLOURCODE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
@@ -68,7 +66,7 @@ public class LoginPageTestCases extends baseClass { // inheritance
 		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
 		lp.clickLogin();
 		String actualResult = lp.URLAfterSignIn();
-		String expectedResult = "https://groceryapp.uniqassosiates.com/admin";
+		String expectedResult =Constant.ADMINURL;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
