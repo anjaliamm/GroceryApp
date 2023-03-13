@@ -24,8 +24,8 @@ public class ManageLocationsPageTestCases extends baseClass {
 		mlp.clickManageLocationsPage();
 		mlp.clickSearchButton();
 		mlp.clickCountryDropdown();
-		String actualResult = mlp.verifyUnitedKingdomIsSelected("230");
-		String expectedResult = "United Kingdom";
+		String actualResult = mlp.verifyUnitedKingdomIsSelected(Constant.VALUEOFUK);
+		String expectedResult =Constant.UK;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
@@ -39,8 +39,8 @@ public class ManageLocationsPageTestCases extends baseClass {
 		mlp.clickManageLocationsPage();
 		mlp.clickSearchButton();
 		mlp.clickStateDropdown();
-		String actualResult = mlp.verifyStateDropdownIsSelected("3817");
-		String expectedResult = "Cambridge";
+		String actualResult = mlp.verifyStateDropdownIsSelected(Constant.VALUEOFSTATEDROPDOWN);
+		String expectedResult =Constant.CAMBRIDGE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 
 	}
@@ -55,10 +55,10 @@ public class ManageLocationsPageTestCases extends baseClass {
 		mlp.clickManageLocationsPage();
 		mlp.clickSearchButton();
 		mlp.clickCountryDropdown();
-		mlp.verifyUnitedKingdomIsSelected("230");
+		mlp.verifyUnitedKingdomIsSelected(Constant.VALUEOFUK);
 		mlp.clickStateDropdown();
-		mlp.verifyStateDropdownIsSelected("3817");
-		mlp.enterLocation("Cambridge University");
+		mlp.verifyStateDropdownIsSelected(Constant.VALUEOFSTATEDROPDOWN);
+		mlp.enterLocation(Constant.CAMBRIDGEUNIVERSITY);
 		mlp.clickSearchButtonInSearchPage();
 	}
 
@@ -72,13 +72,13 @@ public class ManageLocationsPageTestCases extends baseClass {
 		mlp.clickManageLocationsPage();
 		mlp.clickSearchButton();
 		mlp.clickCountryDropdown();
-		mlp.verifyUnitedKingdomIsSelected("230");
+		mlp.verifyUnitedKingdomIsSelected(Constant.VALUEOFUK);
 		mlp.clickStateDropdown();
-		mlp.verifyStateDropdownIsSelected("3817");
-		mlp.enterLocation("Bangladesh");
+		mlp.verifyStateDropdownIsSelected(Constant.VALUEOFSTATEDROPDOWN);
+		mlp.enterLocation(Constant.LOCATION);
 		mlp.clickSearchButtonInSearchPage();
 		String actualResult = mlp.verifyResultNotFoundMessage();
-		String expectedResult = ".........RESULT NOT FOUND.......";
+		String expectedResult =Constant.RESULTNOTFOUNDMESSAGE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
