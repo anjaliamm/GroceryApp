@@ -23,8 +23,8 @@ public class ManagePagesTestCases extends baseClass {
 		mp = new ManagePages(driver);
 		mp.clickManagePagesTile();
 		mp.clickNewButton();
-		String actualResult = mp.verifyTooltipValueOfStyleInDescription("aria-label");
-		String expectedResult = "Style";
+		String actualResult = mp.verifyTooltipValueOfStyleInDescription(Constant.TOOLTIPVALUE);
+		String expectedResult =Constant.STYLE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 	
