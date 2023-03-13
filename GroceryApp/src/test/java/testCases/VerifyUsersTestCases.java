@@ -16,15 +16,15 @@ public class VerifyUsersTestCases extends baseClass {
 	@Test
 	public void selectStatusAsActiveFromDropdown() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		vp = new VerifyUsersPage(driver);
 		vp.clickVerifyUsersTile();
 		vp.clickSearchButton();
 		vp.clickStatusDropdown();
-		String actualResult = vp.verifyActiveUserOption("active");
-		String expectedResult = "Active";
+		String actualResult = vp.verifyActiveUserOption(Constant.ACTIVESTATUSDROPDOWN);
+		String expectedResult =Constant.ACTIVEDROPDOWN;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 
 	}
@@ -32,22 +32,23 @@ public class VerifyUsersTestCases extends baseClass {
 	@Test
 	public void alertMessageResultNotFound() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		vp = new VerifyUsersPage(driver);
 		vp.clickVerifyUsersTile();
 		vp.clickSearchButton();
-		vp.enterName("Anjali");
-		vp.enterEmail("ritaanjali.01@gmail.com");
-		vp.enterPhoneNumber("9947636408");
+		vp.enterName(Constant.TYPENAME);
+		vp.enterEmail(Constant.TYPEEMAIL);
+		vp.enterPhoneNumber(Constant.TYPEPHONENUMBER);
 		vp.clickStatusDropdown();
-		vp.verifyActiveUserOption("active");
+		vp.verifyActiveUserOption(Constant.ACTIVESTATUSDROPDOWN);
 		vp.clickSecondSearchButtonOfVerifyUsers();
 		String actualResult = vp.alertResultNotFound();
-		String expectedResult = ".........RESULT NOT FOUND.......";
+		String expectedResult =Constant.RESULTNOTFOUNDMESSAGE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 
 	}
+	
 
 }
