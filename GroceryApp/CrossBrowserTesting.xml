@@ -1,16 +1,20 @@
 <suite name="MyTestSuite">
-	<test name="ChromeTest">
+	<test name="SmokeTest">
 		<parameter name="Browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.ManageDeliveryBoyPageTestCases"></class>
+			<class name="testCases.ManageLocationsPageTestCases"></class>
 			
 		</classes>
 	</test>
-	<test name="EdgeTest">
+
+	
+	<!-- <test name="SanityTest">
 		<parameter name="Browser" value="Edge"></parameter>
 		<classes>
-			<class name="testCases.ManageDeliveryBoyPageTestCases"></class>
+			<class name="testCases.AdminUsersPageTestCases">
+				
+			</class>
 			
 		</classes>
-	</test>
+	</test>-->
 </suite>
