@@ -24,12 +24,10 @@ public class ManageSliderPageTestCases extends baseClass {
 		ms.clickManageSliderPageTile();
 		ms.clickNewButton();
 		ms.imageUpload();
-		ms.enterLink("https://www.google.com");
+		ms.enterLink(Constant.GOOGLE);
 		ms.clickSubmitButton();
 		String actualResult=ms.alertMessage();
-		String expectedResult="�\n"
-				+ "Alert!\n"
-				+ "Slider Created Successfully";
+		String expectedResult=Constant.SLIDERCREATEDSUCCESSFULMESSAGE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);		
 
   }
