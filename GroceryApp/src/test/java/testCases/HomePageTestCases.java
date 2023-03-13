@@ -24,8 +24,8 @@ public class HomePageTestCases extends baseClass {
 		hp.clickManageExpenseDropdown();
 		hp.clickExpenseCategory();
 		String actualResult = lp.URLAfterSignIn();
-		String expectedResult ="https://groceryapp.uniqassosiates.com/admin/expense-category";
-		Assert.assertEquals(actualResult, expectedResult, "First selected option does not match");
+		String expectedResult =Constant.EXPENSECATEGORYURL;
+		Assert.assertEquals(actualResult, expectedResult,Constant.ERRORMESSAGE);
 
 	}
 
@@ -33,51 +33,51 @@ public class HomePageTestCases extends baseClass {
 	public void verifyCategorySearchListProductsDropdown() {
 		lp = new LoginPage(driver);
 		hp = new HomePage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		hp.clickManageProductTab();
 		hp.clickListProductSearchButton();
 		String actualResult = hp.verifyFirstSelectedOptionOfCategoryDropdownList(1);
-		String expectedResult = "Grocery & Staples";
-		Assert.assertEquals(actualResult, expectedResult, "First selected option does not match");
+		String expectedResult =Constant.ITEMNAME;
+		Assert.assertEquals(actualResult, expectedResult,Constant.ERRORMESSAGE);
 	}
 
 	@Test
 	public void verifySubCategoryListProductsDropdown() {
 		lp = new LoginPage(driver);
 		hp = new HomePage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		hp.clickManageProductTab();
 		hp.clickListProductSearchButton();
 		hp.verifyFirstSelectedOptionOfCategoryDropdownList(1);
 		hp.clickSubCategoryDropdown();
 		String actualResult = hp.verifySelectedOptionOfSubCategoryDropdownList("14");
-		String expectedResult = "Atta & Flours";
-		Assert.assertEquals(actualResult, expectedResult, "First selected option does not match");
+		String expectedResult =Constant.ITEMDROPDOWNLIST;
+		Assert.assertEquals(actualResult, expectedResult,Constant.ERRORMESSAGE);
 	}
 
 	@Test
 	public void verifyFunctionalityOfLogOutButton() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		hp = new HomePage(driver);
 		hp.clickAdminButton();
 		hp.clickLogoutOption();
 		String actualResult = lp.URLAfterSignIn();
-		String expectedResult = "https://groceryapp.uniqassosiates.com/admin/login";
+		String expectedResult =Constant.LOGINURL;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
 	@Test
 	public void isSelectedVegProductTypeRadioButton() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		hp = new HomePage(driver);
 		hp.clickManageProductTab();
@@ -90,14 +90,14 @@ public class HomePageTestCases extends baseClass {
 	@Test
 	public void verifyTextonAlertExpenseCategoryWhenDeleteButtonClicked() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		hp = new HomePage(driver);
 		hp.clickManageExpenseDropdown();
 		hp.clickExpenseCategory();
 		hp.clickDeleteButton();
-		String expectedResult = "Do you want to delete this Category?";
+		String expectedResult =Constant.DELETEMESSAGE;
 		String actualResult = hp.verifytextonalertofDeleteButton();
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
@@ -105,14 +105,14 @@ public class HomePageTestCases extends baseClass {
 	@Test
 	public void verifyManageFooterTextDropdownValueIsSelected() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		hp = new HomePage(driver);
 		hp.clickManageContentTile();
 		hp.clickManageFooterTextRadioButton();
 		String actualResult = hp.verifyclickManageFooterTextRadioButton();
-		String expectedResult = "https://groceryapp.uniqassosiates.com/admin/list-footertext";
+		String expectedResult =Constant.FOOTERTEXTURL;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 
 	}
