@@ -16,18 +16,16 @@ public class PushNotificationTestCases extends baseClass {
 	@Test
 	public void verifyAlertMessageSuccesssful() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		pp = new PushNotificationsPage(driver);
 		pp.clickNotificationsTab();
-		pp.enterTitle("Hello This is Title");
-		pp.enterDescription("This is description");
+		pp.enterTitle(Constant.TITLE);
+		pp.enterDescription(Constant.DESCRIPTION);
 		pp.clickSendButton();
 		String actualResult = pp.verifySuccessfulAlertMessage();
-		String expectedResult ="×\n"
-				+ "Alert!\n"
-				+ "Message send successfully";
+		String expectedResult =Constant.MESSAGESENTSUCCESSFULLY;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
