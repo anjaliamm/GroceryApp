@@ -12,6 +12,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
+
+import constant.Constant;
 import utilities.ScreenshotUtility;
 
 public class baseClass {
@@ -22,7 +24,7 @@ public class baseClass {
 	public static void testBasic() throws IOException {
 		prop = new Properties();
 		FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+
-				"\\src\\main\\resources\\Config.properties");
+				Constant.CONFIGPROPERTIESFILEPATH);
 		prop.load(ip);
 	}
 
@@ -33,10 +35,10 @@ public class baseClass {
 	public void beforeMethod(String browsername) throws IOException { 
 		testBasic();
 
-		if(browsername.equals("Chrome")) {
+		if(browsername.equals(Constant.CHROMEBROWSER)) {
 			driver=new ChromeDriver();
 		}
-		else if(browsername.equals("Edge")) {
+		else if(browsername.equals(Constant.EDGEBROWSER)) {
 			driver=new EdgeDriver();
 		}
 		driver=new ChromeDriver();
