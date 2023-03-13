@@ -29,7 +29,7 @@ public class ManageCategoryTestCases extends baseClass {
 		WebElement deleteButton = driver.findElement(By.xpath(locator));
 		deleteButton.click();
 		String actualResult = mc.verifyDeleteAlertText();
-		String expectedResult = "Do you want to delete this Sub Category?";
+		String expectedResult =Constant.SUBCATEGORYDELETEMESSAGE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 
 	}

@@ -1,7 +1,5 @@
 package elementRepository;
 
-import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,9 +32,7 @@ public class LoginPage {
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/login']")
     WebElement title;
 	public String getTextOfSignInButton() {
-		// String text=signInButton.getText(); //utility-reusable components kept in a
-		// common class.to get reusability
-		// return text;
+		
 		return gu.getElementText(signInButton);
 
 	}
