@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import constant.Constant;
 import elementRepository.LoginPage;
 import elementRepository.ManageCategoryPage;
-import utilities.ExcelRead;
 import utilities.RetryUtils;
 
 public class ManageCategoryTestCases extends baseClass {
@@ -20,8 +19,8 @@ public class ManageCategoryTestCases extends baseClass {
 	@Test(retryAnalyzer=RetryUtils.class)
 	public void verifyTheTextOfAlertWhileClickingDeleteButtonInSubCategoryTable() throws IOException {
 		lp = new LoginPage(driver);
-		lp.enterUsername(ExcelRead.readStringData((prop.getProperty("DataProviderSheet")), 1, 0));
-		lp.enterPassword(ExcelRead.readStringData((prop.getProperty("DataProviderSheet")), 1, 1));
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mc = new ManageCategoryPage(driver);
 		mc.clickManageCategoryTab();

@@ -4,8 +4,6 @@ import org.testng.annotations.Test;
 
 import constant.Constant;
 import elementRepository.LoginPage;
-import utilities.ExcelRead;
-
 import java.io.IOException;
 import org.testng.Assert;
 
@@ -62,8 +60,8 @@ public class LoginPageTestCases extends baseClass { // inheritance
 	@Test
 	public void verifyValidCredentials() throws IOException {
 		lp = new LoginPage(driver);
-		lp.enterUsername(ExcelRead.readStringData((prop.getProperty("DataProviderSheet")), 1, 0));
-		lp.enterPassword(ExcelRead.readStringData((prop.getProperty("DataProviderSheet")), 1, 1));
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		String actualResult = lp.URLAfterSignIn();
 		String expectedResult =Constant.ADMINURL;

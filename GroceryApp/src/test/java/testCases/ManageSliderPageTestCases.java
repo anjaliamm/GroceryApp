@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import constant.Constant;
 import elementRepository.LoginPage;
 import elementRepository.ManageSliderPage;
-import utilities.ExcelRead;
 
 public class ManageSliderPageTestCases extends baseClass {
 	LoginPage lp;
@@ -17,8 +16,8 @@ public class ManageSliderPageTestCases extends baseClass {
   @Test
   public void verifyAlertMessageIsShownWhenFileUploadedSuccessfully() throws IOException, AWTException {
 	  lp = new LoginPage(driver);
-		lp.enterUsername(ExcelRead.readStringData((prop.getProperty("DataProviderSheet")), 1, 0));
-		lp.enterPassword(ExcelRead.readStringData((prop.getProperty("DataProviderSheet")), 1, 1));
+	  lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		ms=new ManageSliderPage(driver);
 		ms.clickManageSliderPageTile();

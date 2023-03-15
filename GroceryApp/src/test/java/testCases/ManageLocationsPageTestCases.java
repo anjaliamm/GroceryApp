@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import constant.Constant;
 import elementRepository.LoginPage;
 import elementRepository.ManageLocationsPage;
-import utilities.ExcelRead;
 
 public class ManageLocationsPageTestCases extends baseClass {
 	LoginPage lp;
@@ -18,8 +17,8 @@ public class ManageLocationsPageTestCases extends baseClass {
 	public void verifyCountryDropdownIsSelected() throws IOException {
 		lp = new LoginPage(driver);
 		mlp = new ManageLocationsPage(driver);
-		lp.enterUsername(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mlp.clickManageLocationsPage();
 		mlp.clickSearchButton();
@@ -33,8 +32,8 @@ public class ManageLocationsPageTestCases extends baseClass {
 	public void verifyStateDropdownIsSelected() throws IOException {
 		lp = new LoginPage(driver);
 		mlp = new ManageLocationsPage(driver);
-		lp.enterUsername(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mlp.clickManageLocationsPage();
 		mlp.clickSearchButton();
@@ -49,8 +48,8 @@ public class ManageLocationsPageTestCases extends baseClass {
 	public void verifyTableIsShownWithResults() throws IOException {
 		lp = new LoginPage(driver);
 		mlp = new ManageLocationsPage(driver);
-		lp.enterUsername(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mlp.clickManageLocationsPage();
 		mlp.clickSearchButton();
@@ -66,8 +65,8 @@ public class ManageLocationsPageTestCases extends baseClass {
 	public void verifyNoResultsMessageShownWhenInvalidSearchIsDone() throws IOException {
 		lp = new LoginPage(driver);
 		mlp = new ManageLocationsPage(driver);
-		lp.enterUsername(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mlp.clickManageLocationsPage();
 		mlp.clickSearchButton();
