@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 
 import constant.Constant;
 import elementRepository.LoginPage;
+import utilities.DataProviderUtility;
+
 import java.io.IOException;
 import org.testng.Assert;
 
@@ -37,7 +39,7 @@ public class LoginPageTestCases extends baseClass { // inheritance
 				
 	}
 
-	@Test(dataProvider="dataProvider",dataProviderClass=DataProviderTest.class )
+	@Test(dataProvider="dataProvider",dataProviderClass=DataProviderUtility.class )
 	public void verifyInValidCredentials(String user,String pass) {
 		lp = new LoginPage(driver);
 		lp.enterUsername(user);
