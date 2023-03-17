@@ -11,7 +11,7 @@ public class AdminUsersPageTestCases extends baseClass {
 	LoginPage lp;
 	AdminUsersPage au;
 	
-  @Test
+ @Test(groups="Sanity")
   public void selectDropdownValueOfUserType() {
 	  lp=new LoginPage(driver);
 	  lp.enterUsername(Constant.USERNAME);
@@ -20,14 +20,14 @@ public class AdminUsersPageTestCases extends baseClass {
 	  au=new AdminUsersPage(driver);
 	  au.clickAdminUsersTile();
 	  au.clickNewButton();
-	  au.enterUsernameInAdminUsers("Vivek");
-	  au.enterPasswordInAdminUsers("vivek1234");
-	  String actualResult=au.chooseUserTypeFromDropdown("admin");
-      String expectedResult="Admin";
+	  au.enterUsername(Constant.USERNAMEENTEREDINADMINUSERS);
+	  au.enterPasswordInAdminUsers(Constant.PASSWORDENTEREDINADMINUSERS);
+	  String actualResult=au.chooseUserTypeFromDropdown(Constant.USERNAME);
+      String expectedResult=Constant.USERNAMEINCAPS;
       Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 
   }
-  @Test
+  @Test(groups="Regression")
   public void alertMessageSuccessfulWhenNewUserIsAdded() {
 	  lp=new LoginPage(driver);
 	  lp.enterUsername(Constant.USERNAME);
@@ -36,17 +36,15 @@ public class AdminUsersPageTestCases extends baseClass {
 	  au=new AdminUsersPage(driver);
 	  au.clickAdminUsersTile();
 	  au.clickNewButton();
-	  au.enterUsernameInAdminUsers("vinitha");
-	  au.enterPasswordInAdminUsers("vinitha1234");
-	  au.chooseUserTypeFromDropdown("admin");
+	  au.enterUsernameInAdminUsers(Constant.NEWADMINUSER);
+	  au.enterPasswordInAdminUsers(Constant.NEWADMINPASS);
+	  au.chooseUserTypeFromDropdown(Constant.USERNAME);
 	  au.clickSaveButton();
 	  String actualResult=au.alertMessageSuccessfulWhenNewUserIsAdded();
-	  String expectedResult="×\n"
-				+ "Alert!\n"
-				+ "User Created Successfully";
+	  String expectedResult=Constant.USERCREATEDSUCCESSFULMESSAGE;
 	  Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
   }
-  @Test
+  @Test(groups="Sanity")
   public void usernameAlreadyExists() {
 	  lp=new LoginPage(driver);
 	  lp.enterUsername(Constant.USERNAME);
@@ -55,14 +53,12 @@ public class AdminUsersPageTestCases extends baseClass {
 	  au=new AdminUsersPage(driver);
 	  au.clickAdminUsersTile();
 	  au.clickNewButton();
-	  au.enterUsernameInAdminUsers("Vivek");
-	  au.enterPasswordInAdminUsers("Vivek1234");
-	  au.chooseUserTypeFromDropdown("admin");
+	  au.enterUsername(Constant.USERNAMEENTEREDINADMINUSERS);
+	  au.enterPasswordInAdminUsers(Constant.PASSWORDENTEREDINADMINUSERS);
+	  au.chooseUserTypeFromDropdown(Constant.USERNAME);
 	  au.clickSaveButton();
 	  String actualResult=au.usernameAlreadyExistsMessage();
-	  String expectedResult="×\n"
-				+ "Alert!\n"
-				+ "Username already exists.";
+	  String expectedResult=Constant.USERNAMEEXISTSMESSAGE;
 	  Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
   }
   

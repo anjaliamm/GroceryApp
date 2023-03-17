@@ -13,7 +13,7 @@ public class HomePageTestCases extends baseClass {
 	LoginPage lp;
 	HomePage hp;
 
-	@Test
+	@Test(groups="Sanity")
 	public void verifySelectValueFromManageExpenseDropdown() throws IOException {
 		testBasic();
 		lp = new LoginPage(driver);
@@ -29,7 +29,7 @@ public class HomePageTestCases extends baseClass {
 
 	}
 
-	@Test
+	@Test(groups="Regression")
 	public void verifyCategorySearchListProductsDropdown() {
 		lp = new LoginPage(driver);
 		hp = new HomePage(driver);
@@ -43,7 +43,7 @@ public class HomePageTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult,Constant.ERRORMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Smoke")
 	public void verifySubCategoryListProductsDropdown() {
 		lp = new LoginPage(driver);
 		hp = new HomePage(driver);
@@ -59,7 +59,7 @@ public class HomePageTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult,Constant.ERRORMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Smoke")
 	public void verifyFunctionalityOfLogOutButton() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
@@ -73,7 +73,7 @@ public class HomePageTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Sanity")
 	public void isSelectedVegProductTypeRadioButton() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
@@ -87,7 +87,7 @@ public class HomePageTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Regression")
 	public void verifyTextonAlertExpenseCategoryWhenDeleteButtonClicked() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
@@ -102,7 +102,7 @@ public class HomePageTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Regression")
 	public void verifyManageFooterTextDropdownValueIsSelected() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
