@@ -1,14 +1,17 @@
 <suite name="MyTestSuite" parallel="tests" thread-count="2">
-	<test name="ChromeTest">
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtils" />
+	</listeners>
+	<test name="SmokeTest">
 		<parameter name="Browser" value="Chrome"></parameter>
 		<classes>
 			<class name="testCases.LoginPageTestCases"></class>
 		</classes>
 	</test>
-	<test name="EdgeTest">
-		<parameter name="Browser" value="Edge"></parameter>
+	<test name="SanityTest">
+		<parameter name="Browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.LoginPageTestCases"></class>
+			<class name="testCases.AdminUsersPageTestCases"></class>
 		</classes>
 	</test>
 </suite>

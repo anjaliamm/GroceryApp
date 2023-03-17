@@ -1,0 +1,29 @@
+<suite name="MyTestSuite" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtils" />
+	</listeners>
+	<test name="SmokeTest">
+		<parameter name="Browser" value="Chrome"></parameter>
+		<classes>
+			<class name="testCases.PushNotificationTestCases">
+				<include name="verifyAlertMessageSuccesssful"/></class>
+			<class name="testCases.LoginPageTestCases">
+			    <include name="verifyTheTextOfLoginPageTitle"/></class>
+		</classes>
+	</test>
+	<test name="RegressionTest">
+		<parameter name="Browser" value="Chrome"></parameter>
+		<classes>
+			<class name="testCases.AdminUsersPageTestCases">
+			<include name="alertMessageSuccessfulWhenNewUserIsAdded"/></class>
+		</classes>
+	</test>
+	<test name="SanityTest">
+		<parameter name="Browser" value="Chrome"></parameter>
+		<classes>
+			<class name="testCases.ManagePagesTestCases">
+				<include name="verifyTooltipValueOfStyleDescription"/>
+			</class>
+		</classes>
+	</test>
+</suite>
