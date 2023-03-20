@@ -5,8 +5,9 @@
 	<test name="SmokeTest">
 		<parameter name="Browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.ManageCategoryTestCases"></class>
+			<class name="testCases.ManageLocationsPageTestCases"></class>
 			<class name="testCases.LoginPageTestCases"></class>
+			<class name="testCases.PushNotificationTestcases"></class>
 			</classes>
 	</test>
 

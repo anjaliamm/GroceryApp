@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -22,10 +23,10 @@ public class baseClass {
 	ScreenshotUtility ss;
 
 	public static void testBasic() throws IOException {
-		prop = new Properties();
+		prop = new Properties();          //object creation of properties class
 		FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+
 				Constant.CONFIGPROPERTIESFILEPATH);
-		prop.load(ip);
+		prop.load(ip);                  //Using load method we can load the properties file into the project
 	}
 
 	WebDriver driver;
@@ -36,7 +37,11 @@ public class baseClass {
 		testBasic();
 
 		if(browsername.equals(Constant.CHROMEBROWSER)) {
+			System.setProperty("webdriver.chrome.driver","C:\\Users\\vivek\\Downloads\\chromedriver_win32\\chromedriver.exe\\");
+			System.setProperty("webdriver.http.factory","jdk-http-client");
 			driver=new ChromeDriver();
+			ChromeOptions ops=new ChromeOptions();
+			ops.addArguments("--remote-allow-origins=*");
 		}
 		else if(browsername.equals(Constant.EDGEBROWSER)) {
 			driver=new EdgeDriver();

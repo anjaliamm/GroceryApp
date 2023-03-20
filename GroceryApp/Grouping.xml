@@ -1,4 +1,7 @@
 <suite name="My Test Suite">
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtils" />
+	</listeners>
 	<test name="MyTest">
 		<parameter name="Browser" value="Chrome"></parameter>
 		<groups>

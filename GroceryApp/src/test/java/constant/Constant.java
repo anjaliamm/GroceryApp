@@ -8,14 +8,10 @@ public class Constant {
     public static final String USERNAMEENTEREDINADMINUSERS="Vivek";
     public static final String PASSWORDENTEREDINADMINUSERS="vivek1234";
     public static final String USERNAMEINCAPS="Admin";
-    public static final String USERNAMEEXISTSMESSAGE="×\n"
-			+ "Alert!\n"
-			+ "Username already exists.";
+    public static final String USERNAMEEXISTSMESSAGE="Username already exists.";
     public static final String NEWADMINUSER="vinitha";
     public static final String NEWADMINPASS="vinitha1234";
-    public static final String USERCREATEDSUCCESSFULMESSAGE="×\n"
-			+ "Alert!\n"
-			+ "User Created Successfully";
+    public static final String USERCREATEDSUCCESSFULMESSAGE="User Created Successfully";
     public static final String CONFIGPROPERTIESFILEPATH="\\src\\main\\resources\\Config.properties";
     public static final String CHROMEBROWSER="Chrome";
     public static final String EDGEBROWSER="Edge";
@@ -46,9 +42,7 @@ public class Constant {
     public static final String GROUPSELECTEDINWORDS="discount";
     public static final String KILOGRAMS="kg";
     public static final String GOOGLE="https://www.google.com";
-    public static final String SLIDERCREATEDSUCCESSFULMESSAGE="�\n"
-			+ "Alert!\n"
-			+ "Slider Created Successfully";
+    public static final String SLIDERCREATEDSUCCESSFULMESSAGE="Slider Created Successfully";
     public static final String TYPENAME="Anjali";
     public static final String TYPEEMAIL="ritaanjali@gmail.com";
     public static final String TYPEPHONENUMBER="9947636408";

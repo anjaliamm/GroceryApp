@@ -11,7 +11,7 @@
 	<test name="SanityTest">
 		<parameter name="Browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.ManageCategoryTestCases"></class>
+			<class name="testCases.ManageProductTestCases"></class>
 		</classes>
 	</test>
 </suite>
