@@ -22,7 +22,7 @@ public class LoginPageTestCases extends baseClass { // inheritance
 
 	}
 
-	@Test(groups= {"Critical"} )
+	@Test
 	public void verifyRemembermeCheckbxIsUnselected() {
 		lp = new LoginPage(driver);
 		boolean actualResult = false;
@@ -30,7 +30,7 @@ public class LoginPageTestCases extends baseClass { // inheritance
 		Assert.assertEquals(actualResult, expectedResult, Constant.REMEMBERMECHECKBOXERRORMESSAGE);
 
 	}
-	@Test
+	@Test(groups= {"Critical"} )
 	public void verifyTheTextOfLoginPageTitle() {
 		lp = new LoginPage(driver);
 		String actualResult=lp.getTitleOfPage();
@@ -59,7 +59,7 @@ public class LoginPageTestCases extends baseClass { // inheritance
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test
+	@Test(groups= {"Critical"} )
 	public void verifyValidCredentials() throws IOException {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
