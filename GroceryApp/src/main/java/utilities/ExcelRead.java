@@ -1,8 +1,8 @@
 package utilities;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -13,15 +13,18 @@ public class ExcelRead {
 	public static FileInputStream f;
 	public static XSSFWorkbook w;
 	public static XSSFSheet s;
+	public static Properties prop;
 
-	public static String readStringData(String sheet, int i, int j) throws IOException {
-		f = new FileInputStream(
-				System.getProperty("user.dir") + "\\src\\main\\resources\\ExcelFiles\\Credentials.xlsx"); // Fetching
-																											// the file
-																											// from the
-																											// specified
-																											// path
-		w = new XSSFWorkbook(f); // Fetching the workbook from the file
+	public static void testBasic() throws IOException {
+		prop = new Properties();
+		FileInputStream ip = new FileInputStream(
+				System.getProperty("user.dir") + "\\src\\main\\resources\\Config.properties");
+		prop.load(ip);
+	}
+
+	public static String readStringData(String excel, String sheet, int i, int j) throws IOException {
+		f = new FileInputStream(System.getProperty("user.dir") + prop.getProperty("LoginExcel")); // Fetching the file from the specified path
+	    w = new XSSFWorkbook(f); // Fetching the workbook from the file
 		s = w.getSheet(sheet); // Fetching the sheet named Sheet1 from the workbook
 		Row r = s.getRow(i); // Method to get the row
 		Cell c = r.getCell(j); // Method to get the column
@@ -29,11 +32,10 @@ public class ExcelRead {
 
 	}
 
-	public static String readIntegerData(String sheet, int i, int j) throws IOException {
-		f = new FileInputStream(
-				System.getProperty("user.dir") + "\\src\\main\\resources\\ExcelFiles\\Credentials.xlsx");
+	public static String readIntegerData(String excel, String sheet, int i, int j) throws IOException {
+		f = new FileInputStream(System.getProperty("user.dir") + prop.getProperty("LoginExcel"));
 		w = new XSSFWorkbook(f);
-		s = w.getSheet("Sheet1");
+		s = w.getSheet(sheet);
 		Row r = s.getRow(i);
 		Cell c = r.getCell(j);
 		int a = (int) c.getNumericCellValue(); // To get the numeric value from the column
