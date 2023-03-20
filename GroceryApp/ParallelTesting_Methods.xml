@@ -14,8 +14,8 @@
 	<test name="RegressionTest">
 		<parameter name="Browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.AdminUsersPageTestCases">
-			<include name="alertMessageSuccessfulWhenNewUserIsAdded"/></class>
+			<class name="testCases.ManageCategoryTestCases">
+			<include name="verifyTheTextOfAlertWhileClickingDeleteButtonInSubCategoryTable"/></class>
 		</classes>
 	</test>
 	<test name="SanityTest">

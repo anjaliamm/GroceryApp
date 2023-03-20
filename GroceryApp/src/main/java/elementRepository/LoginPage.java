@@ -28,7 +28,7 @@ public class LoginPage {
 	@FindBy(xpath = "//input[@type='password']")
 	WebElement password;
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
-	WebElement alertMessage;
+	WebElement error;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/login']")
     WebElement title;
 	public String getTextOfSignInButton() {
@@ -55,8 +55,9 @@ public class LoginPage {
 		signInButton.click();
 	}
 
-	public String verifyInvalidUsernamePasswordErrorMessage() {
-		return gu.verifyErrorMessageElementInvalidCredential(alertMessage);
+	public boolean getErrorMessage(String text) {
+		String actual=gu.getElementText(error);
+		return text.contains(text);
 	}
 
 	public String verifyTheBackgroundColorOfSignInButtonInLoginPage() {

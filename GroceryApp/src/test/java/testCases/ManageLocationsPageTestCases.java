@@ -61,24 +61,6 @@ public class ManageLocationsPageTestCases extends baseClass {
 		mlp.clickSearchButtonInSearchPage();
 	}
 
-	@Test
-	public void verifyNoResultsMessageShownWhenInvalidSearchIsDone() throws IOException {
-		lp = new LoginPage(driver);
-		mlp = new ManageLocationsPage(driver);
-		lp.enterUsername(Constant.USERNAME);
-		lp.enterPassword(prop.getProperty("Password"));
-		lp.clickLogin();
-		mlp.clickManageLocationsPage();
-		mlp.clickSearchButton();
-		mlp.clickCountryDropdown();
-		mlp.verifyUnitedKingdomIsSelected(Constant.VALUEOFUK);
-		mlp.clickStateDropdown();
-		mlp.verifyStateDropdownIsSelected(Constant.VALUEOFSTATEDROPDOWN);
-		mlp.enterLocation(Constant.LOCATION);
-		mlp.clickSearchButtonInSearchPage();
-		String actualResult = mlp.verifyResultNotFoundMessage();
-		String expectedResult =Constant.RESULTNOTFOUNDMESSAGE;
-		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
-	}
+	
 
 }

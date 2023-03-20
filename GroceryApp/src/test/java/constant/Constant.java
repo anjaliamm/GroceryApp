@@ -28,9 +28,7 @@ public class Constant {
     public static final String FOOTERTEXTURL="https://groceryapp.uniqassosiates.com/admin/list-footertext";
     public static final String SIGNIN="Sign In";
     public static final String SUPERMARKETNAME="7rmart supermarket";
-    public static final String INVALIDUSERNAMEPASSWORDMESSAGE="×\n"
-			+ "Alert!\n"
-			+ "Invalid Username/Password";
+    public static final String INVALIDUSERNAMEPASSWORDMESSAGE="Invalid Username/Password";
     public static final String PASSWORDANDUSERNAMEMATCHES="Username and password matches";
     public static final String COLOURCODE="rgba(52, 58, 64, 1)";
     public static final String ADMINURL="https://groceryapp.uniqassosiates.com/admin";

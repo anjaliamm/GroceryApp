@@ -1,20 +1,21 @@
 <suite name="MyTestSuite">
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtils" />
+	</listeners>
 	<test name="SmokeTest">
 		<parameter name="Browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.ManageLocationsPageTestCases"></class>
-			
-		</classes>
+			<class name="testCases.ManageCategoryTestCases"></class>
+			<class name="testCases.LoginPageTestCases"></class>
+			</classes>
 	</test>
 
 	
-	<!-- <test name="SanityTest">
+	 <test name="SanityTest">
 		<parameter name="Browser" value="Edge"></parameter>
 		<classes>
-			<class name="testCases.AdminUsersPageTestCases">
-				
-			</class>
-			
-		</classes>
-	</test>-->
+			<class name="testCases.LoginPageTestCases">
+				</class>
+			</classes>
+	</test>
 </suite>

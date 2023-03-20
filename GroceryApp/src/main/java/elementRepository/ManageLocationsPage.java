@@ -6,13 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.ExcelRead;
+
 import utilities.GeneralUtilities;
 
 public class ManageLocationsPage {
 	WebDriver driver;
 	GeneralUtilities gu = new GeneralUtilities();
 	ExcelRead er = new ExcelRead();
-
+    
 	public ManageLocationsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -25,11 +26,11 @@ public class ManageLocationsPage {
 	WebElement search;
 	@FindBy(id = "country_id")
 	WebElement countryDropdown;
-	@FindBy(id = "st_id")
+	@FindBy(xpath="//select[@name='state_id']")
 	WebElement stateDropdown;
 	@FindBy(id = "location")
 	WebElement location;
-	@FindBy(xpath = "//button[@class='btn btn-danger btn-fix align-center']")
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement searchButton;
 	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td//span//center")
 	WebElement listTable;
@@ -51,11 +52,12 @@ public class ManageLocationsPage {
 	}
 
 	public void clickStateDropdown() {
+		
 		stateDropdown.click();
 	}
 
 	public String verifyStateDropdownIsSelected(String value) {
-		return gu.selectElementValueFromDropdownUsingSelectByValue(stateDropdown, value);
+	return gu.selectElementValueFromDropdownUsingSelectByValue(stateDropdown, value);
 
 	}
 
