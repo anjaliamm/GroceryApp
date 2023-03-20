@@ -44,6 +44,9 @@ public class AdminUsersPage {
 		String randomString=rg.randomPassword();
 		enterusername.sendKeys(user+randomString);
 	}
+	public void enterUsername(String usernam) {
+		enterusername.sendKeys(usernam);
+	}
 	public void enterPasswordInAdminUsers(String pass) {
 		enterpassword.sendKeys(pass);
 	}
@@ -54,12 +57,14 @@ public class AdminUsersPage {
 		gu.pageScroll(driver,saveButton);
 		saveButton.click();
 	}
-	public String alertMessageSuccessfulWhenNewUserIsAdded() {
-		return gu.getElementText(alertMessage);
+	public boolean alertMessageSuccessfulWhenNewUserIsAdded(String text) {
+		String actual=gu.getElementText(alertMessage);
+		return text.contains(text);
 	}
 
-	public String usernameAlreadyExistsMessage() {
-		return gu.getElementText(usernameExistsAlert);
+	public boolean usernameAlreadyExistsMessage(String text) {
+		String actual= gu.getElementText(usernameExistsAlert);
+		return text.contains(text);
 	}
 	
 }

@@ -56,7 +56,5 @@ public class Constant {
     public static final String ACTIVEDROPDOWN="Active";
     public static final String TITLE="Hello This is Title";
     public static final String DESCRIPTION="This is description";
-    public static final String MESSAGESENTSUCCESSFULLY="×\r\n"
-    		+ "Alert!\r\n"
-    		+ "Message send successfully";
+    public static final String MESSAGESENTSUCCESSFULLY="Message send successfully";
 }

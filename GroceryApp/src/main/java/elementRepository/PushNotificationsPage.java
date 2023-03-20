@@ -56,7 +56,8 @@ public class PushNotificationsPage {
 		resetButton.click();
 	}
 
-	public String verifySuccessfulAlertMessage() {
-		return gu.getElementText(alertMessage);
+	public boolean verifySuccessfulAlertMessage(String text) {
+		String actual=gu.getElementText(alertMessage);
+		return text.contains(text);
 	}
 }

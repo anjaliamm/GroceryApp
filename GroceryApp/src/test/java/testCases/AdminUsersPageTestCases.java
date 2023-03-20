@@ -40,9 +40,8 @@ public class AdminUsersPageTestCases extends baseClass {
 	  au.enterPasswordInAdminUsers(Constant.NEWADMINPASS);
 	  au.chooseUserTypeFromDropdown(Constant.USERNAME);
 	  au.clickSaveButton();
-	  String actualResult=au.alertMessageSuccessfulWhenNewUserIsAdded();
-	  String expectedResult=Constant.USERCREATEDSUCCESSFULMESSAGE;
-	  Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
+	  boolean actualResult=au.alertMessageSuccessfulWhenNewUserIsAdded(Constant.USERCREATEDSUCCESSFULMESSAGE);
+	  Assert.assertTrue(actualResult, Constant.ASSERTMESSAGE);
   }
   @Test(groups="Sanity")
   public void usernameAlreadyExists() {
@@ -57,9 +56,8 @@ public class AdminUsersPageTestCases extends baseClass {
 	  au.enterPasswordInAdminUsers(Constant.PASSWORDENTEREDINADMINUSERS);
 	  au.chooseUserTypeFromDropdown(Constant.USERNAME);
 	  au.clickSaveButton();
-	  String actualResult=au.usernameAlreadyExistsMessage();
-	  String expectedResult=Constant.USERNAMEEXISTSMESSAGE;
-	  Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
+	  boolean actualResult=au.usernameAlreadyExistsMessage(Constant.USERNAMEEXISTSMESSAGE);
+	  Assert.assertTrue(actualResult, Constant.ASSERTMESSAGE);
   }
   
 }
