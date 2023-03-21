@@ -13,7 +13,7 @@ public class VerifyUsersTestCases extends baseClass {
 	HomePage hp;
 	VerifyUsersPage vp;
 
-	@Test
+	@Test(groups="Sanity")
 	public void selectStatusAsActiveFromDropdown() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
@@ -29,7 +29,7 @@ public class VerifyUsersTestCases extends baseClass {
 
 	}
 
-	@Test
+	@Test(groups="Regression")
 	public void alertMessageResultNotFound() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);

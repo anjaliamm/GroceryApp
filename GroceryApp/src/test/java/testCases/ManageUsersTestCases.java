@@ -11,7 +11,7 @@ public class ManageUsersTestCases extends baseClass {
 	LoginPage lp;
 	ManageUsersPage mu;
 
-	@Test
+	@Test(groups="Regression")
 	public void verifyActiveStatusSelectedInDropdown() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
@@ -28,7 +28,7 @@ public class ManageUsersTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Smoke")
 	public void verifyErrorMessageShownWhenInvalidDetailsGiven() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);

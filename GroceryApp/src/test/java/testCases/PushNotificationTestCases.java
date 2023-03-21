@@ -13,7 +13,7 @@ public class PushNotificationTestCases extends baseClass {
 	HomePage hp;
 	PushNotificationsPage pp;
 
-	@Test
+	@Test(groups="Regression")
 	public void verifyAlertMessageSuccesssful() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);

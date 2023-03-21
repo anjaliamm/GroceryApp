@@ -11,7 +11,7 @@ public class ManageProductTestCases extends baseClass {
 	LoginPage lp;
 	ManageProductPage mpp;
 
-	@Test
+	@Test(groups="Regression")
 	public void verifyWeightRadioButtonSelectedInPriceType() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
@@ -26,7 +26,7 @@ public class ManageProductTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Sanity")
 	public void verifyGroupSelectedInDropdown() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
@@ -41,7 +41,7 @@ public class ManageProductTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Regression")
 	public void verifyWeightUnitSelectedInDropdown() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);
@@ -56,7 +56,7 @@ public class ManageProductTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Smoke")
 	public void verifyUnlimitedStockCheckboxisSelected() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(Constant.USERNAME);

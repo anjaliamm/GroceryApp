@@ -13,7 +13,7 @@ import elementRepository.ManageSliderPage;
 public class ManageSliderPageTestCases extends baseClass {
 	LoginPage lp;
 	ManageSliderPage ms;
-  @Test
+  @Test(groups="Regression")
   public void verifyAlertMessageIsShownWhenFileUploadedSuccessfully() throws IOException, AWTException {
 	  lp = new LoginPage(driver);
 	  lp.enterUsername(Constant.USERNAME);
@@ -25,9 +25,8 @@ public class ManageSliderPageTestCases extends baseClass {
 		ms.imageUpload();
 		ms.enterLink(Constant.GOOGLE);
 		ms.clickSubmitButton();
-		String actualResult=ms.alertMessage();
-		String expectedResult=Constant.SLIDERCREATEDSUCCESSFULMESSAGE;
-		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);		
+		boolean actualResult=ms.alertMessage(Constant.SLIDERCREATEDSUCCESSFULMESSAGE);
+		Assert.assertTrue(actualResult, Constant.ASSERTMESSAGE);		
 
   }
 }
