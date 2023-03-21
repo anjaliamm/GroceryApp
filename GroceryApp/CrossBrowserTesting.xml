@@ -4,8 +4,17 @@
 	</listeners>
 	<test name="SmokeTest">
 		<parameter name="Browser" value="Chrome"></parameter>
+		<groups>
+			<run>
+				<include name="Critical"></include>
+				<include name="High"></include>
+				<include name="Sanity"></include>
+				<incude name="Regression"></incude>
+				<include name="Smoke"></include>
+			</run>
+		</groups>
 		<classes>
-			<class name="testCases.ManageLocationsPageTestCases"></class>
+			<class name="testCases.VerifyUsersTestCases"></class>
 			<class name="testCases.LoginPageTestCases"></class>
 			<class name="testCases.PushNotificationTestcases"></class>
 			</classes>

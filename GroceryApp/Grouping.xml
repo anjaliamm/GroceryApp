@@ -10,6 +10,7 @@
 				<include name="High"></include>
 				<include name="Sanity"></include>
 				<incude name="Regression"></incude>
+				<include name="Smoke"></include>
 			</run>
 		</groups>
 		<classes>
