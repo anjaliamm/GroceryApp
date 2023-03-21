@@ -5,9 +5,17 @@
 	<test name="My Test">
 		<parameter name="Browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.LoginPageTestCases"></class>
+			<class name="testCases.AdminUsersPageTestCases"></class>
 			<class name="testCases.ManageLocationsPageTestCases"></class>
 			<class name="testCases.ManagePagesTestCases"></class>
+			<class name="testCases.ManageProductTestCases"></class>
+			<class name="testCases.LoginPageTestCases"></class>
+			<class name="testCases.ManageCategoryTestCases"></class>
+			<class name="testCases.ManageSliderPageTestCases"></class>
+			<class name="testCases.ManageUsersTestCases"></class>
+			<class name="testCases.PushNotificationTestCases"></class>
+			<class name="testCases.VerifyUsersTestCases"></class>
+			<class name="testCases.HomePageTestCases"></class>
 		</classes>
 	</test>
 </suite>
