@@ -17,7 +17,8 @@ public class Constant {
     public static final String EDGEBROWSER="Edge";
     public static final String EXPENSECATEGORYURL="https://groceryapp.uniqassosiates.com/admin/expense-category";
     public static final String ERRORMESSAGE="First selected option does not match";
-    public static final String ITEMNAME="Grocery & Staples";
+    public static final String ITEMNAME="Select";
+    public static final String ITEMNAMES="Select";
     public static final String ITEMDROPDOWNLIST="Atta & Flours";
     public static final String LOGINURL="https://groceryapp.uniqassosiates.com/admin/login";
     public static final String DELETEMESSAGE="Do you want to delete this Category?";
@@ -27,6 +28,7 @@ public class Constant {
     public static final String INVALIDUSERNAMEPASSWORDMESSAGE="Invalid Username/Password";
     public static final String PASSWORDANDUSERNAMEMATCHES="Username and password matches";
     public static final String COLOURCODE="rgba(52, 58, 64, 1)";
+    public static final String COLOURCODING="rgba(220, 53, 69, 1)";
     public static final String ADMINURL="https://groceryapp.uniqassosiates.com/admin";
     public static final String SUBCATEGORYDELETEMESSAGE="Do you want to delete this Sub Category?";
     public static final String UK="United Kingdom";

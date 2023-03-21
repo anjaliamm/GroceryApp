@@ -106,11 +106,6 @@ public class HomePage {
 		deleteButton.click();
 	}
 
-	public String verifytextonalertofDeleteButton() {
-		return gu.verifyTextOfAlertElement(driver);
-
-	}
-
 	public void clickManageContentTile() {
 		ManageContentTile.click();
 	}

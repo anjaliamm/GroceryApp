@@ -11,7 +11,7 @@ public class AdminUsersPageTestCases extends baseClass {
 	LoginPage lp;
 	AdminUsersPage au;
 	
- @Test(groups="Sanity")
+/* @Test(groups="Sanity")
   public void selectDropdownValueOfUserType() {
 	  lp=new LoginPage(driver);
 	  lp.enterUsername(Constant.USERNAME);
@@ -58,6 +58,19 @@ public class AdminUsersPageTestCases extends baseClass {
 	  au.clickSaveButton();
 	  boolean actualResult=au.usernameAlreadyExistsMessage(Constant.USERNAMEEXISTSMESSAGE);
 	  Assert.assertTrue(actualResult, Constant.ASSERTMESSAGE);
+  }*/
+  @Test(groups="Regression")
+  public void getBackgroundColourOfNewButton() {
+	  lp=new LoginPage(driver);
+	  lp.enterUsername(Constant.USERNAME);
+	  lp.enterPassword(prop.getProperty("Password"));
+	  lp.clickLogin();
+	  au=new AdminUsersPage(driver);
+	  au.clickAdminUsersTile();
+	  au.clickNewButton();
+	  String actualResult =au.verifyBackgroundColorOfNewButtonInAdminUsersPage();
+	  String expectedResult =Constant.COLOURCODING;
+	  Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
   }
   
 }

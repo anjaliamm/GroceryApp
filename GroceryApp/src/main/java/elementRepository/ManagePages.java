@@ -39,7 +39,7 @@ public class ManagePages {
 	WebElement saveButton;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alertMessageSuccessful;
-
+    
 	public void clickManagePagesTile() {
 		managePagesTile.click();
 	}
@@ -51,6 +51,5 @@ public class ManagePages {
 	public String verifyTooltipValueOfStyleInDescription(String value) {
 		return gu.verifyElementToolTipValue(styleTooltip, value);
 	}
-
-
+	
 }

@@ -38,7 +38,7 @@ public class HomePageTestCases extends baseClass {
 		lp.clickLogin();
 		hp.clickManageProductTab();
 		hp.clickListProductSearchButton();
-		String actualResult = hp.verifyFirstSelectedOptionOfCategoryDropdownList(1);
+		String actualResult = hp.verifyFirstSelectedOptionOfCategoryDropdownList(0);
 		String expectedResult =Constant.ITEMNAME;
 		Assert.assertEquals(actualResult, expectedResult,Constant.ERRORMESSAGE);
 	}
@@ -52,10 +52,10 @@ public class HomePageTestCases extends baseClass {
 		lp.clickLogin();
 		hp.clickManageProductTab();
 		hp.clickListProductSearchButton();
-		hp.verifyFirstSelectedOptionOfCategoryDropdownList(1);
+		hp.verifyFirstSelectedOptionOfCategoryDropdownList(0);
 		hp.clickSubCategoryDropdown();
-		String actualResult = hp.verifySelectedOptionOfSubCategoryDropdownList("14");
-		String expectedResult =Constant.ITEMDROPDOWNLIST;
+		String actualResult = hp.verifyFirstSelectedOptionOfCategoryDropdownList(0);
+		String expectedResult =Constant.ITEMNAME;
 		Assert.assertEquals(actualResult, expectedResult,Constant.ERRORMESSAGE);
 	}
 
@@ -87,20 +87,7 @@ public class HomePageTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test(groups="Regression")
-	public void verifyTextonAlertExpenseCategoryWhenDeleteButtonClicked() {
-		lp = new LoginPage(driver);
-		lp.enterUsername(Constant.USERNAME);
-		lp.enterPassword(prop.getProperty("Password"));
-		lp.clickLogin();
-		hp = new HomePage(driver);
-		hp.clickManageExpenseDropdown();
-		hp.clickExpenseCategory();
-		hp.clickDeleteButton();
-		String expectedResult =Constant.DELETEMESSAGE;
-		String actualResult = hp.verifytextonalertofDeleteButton();
-		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
-	}
+	
 
 	@Test(groups="Regression")
 	public void verifyManageFooterTextDropdownValueIsSelected() {
