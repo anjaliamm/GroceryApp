@@ -8,17 +8,16 @@ import org.testng.annotations.Test;
 import constant.Constant;
 import elementRepository.LoginPage;
 import elementRepository.ManagePages;
-import utilities.ExcelRead;
 
 public class ManagePagesTestCases extends baseClass {
 	LoginPage lp;
 	ManagePages mp;
 
-	@Test
+	@Test(groups="Sanity")
 	public void verifyTooltipValueOfStyleDescription() throws IOException {
 		lp = new LoginPage(driver);
-		lp.enterUsername(ExcelRead.readStringData((prop.getProperty("DataProviderSheet")), 1, 0));
-		lp.enterPassword(ExcelRead.readStringData((prop.getProperty("DataProviderSheet")), 1, 1));
+		lp.enterUsername(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("Password"));
 		lp.clickLogin();
 		mp = new ManagePages(driver);
 		mp.clickManagePagesTile();

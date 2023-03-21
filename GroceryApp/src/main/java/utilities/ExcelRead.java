@@ -23,7 +23,7 @@ public class ExcelRead {
 	}
 
 	public static String readStringData(String excel, String sheet, int i, int j) throws IOException {
-		f = new FileInputStream(System.getProperty("user.dir") + prop.getProperty("LoginExcel")); // Fetching the file from the specified path
+		f = new FileInputStream(System.getProperty("user.dir") + excel); // Fetching the file from the specified path
 	    w = new XSSFWorkbook(f); // Fetching the workbook from the file
 		s = w.getSheet(sheet); // Fetching the sheet named Sheet1 from the workbook
 		Row r = s.getRow(i); // Method to get the row
@@ -33,7 +33,7 @@ public class ExcelRead {
 	}
 
 	public static String readIntegerData(String excel, String sheet, int i, int j) throws IOException {
-		f = new FileInputStream(System.getProperty("user.dir") + prop.getProperty("LoginExcel"));
+		f = new FileInputStream(System.getProperty("user.dir") + excel);
 		w = new XSSFWorkbook(f);
 		s = w.getSheet(sheet);
 		Row r = s.getRow(i);

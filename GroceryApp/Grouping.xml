@@ -8,10 +8,14 @@
 			<run>
 				<include name="Critical"></include>
 				<include name="High"></include>
+				<include name="Sanity"></include>
+				<incude name="Regression"></incude>
 			</run>
 		</groups>
 		<classes>
 			<class name="testCases.LoginPageTestCases"></class>
+			<class name="testCases.ManageLocationsPageTestCases"></class>
+			<class name="testCases.ManagePagesTestCases"></class>
 		</classes>
 	</test>
 </suite>

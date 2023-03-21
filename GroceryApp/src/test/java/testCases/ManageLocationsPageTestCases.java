@@ -13,7 +13,7 @@ public class ManageLocationsPageTestCases extends baseClass {
 	LoginPage lp;
 	ManageLocationsPage mlp;
 
-	@Test
+	@Test(groups="Sanity")
 	public void verifyCountryDropdownIsSelected() throws IOException {
 		lp = new LoginPage(driver);
 		mlp = new ManageLocationsPage(driver);
@@ -28,7 +28,7 @@ public class ManageLocationsPageTestCases extends baseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTMESSAGE);
 	}
 
-	@Test
+	@Test(groups="Sanity")
 	public void verifyStateDropdownIsSelected() throws IOException {
 		lp = new LoginPage(driver);
 		mlp = new ManageLocationsPage(driver);
@@ -44,7 +44,7 @@ public class ManageLocationsPageTestCases extends baseClass {
 
 	}
 
-	@Test
+	@Test(groups="Regression")
 	public void verifyTableIsShownWithResults() throws IOException {
 		lp = new LoginPage(driver);
 		mlp = new ManageLocationsPage(driver);
