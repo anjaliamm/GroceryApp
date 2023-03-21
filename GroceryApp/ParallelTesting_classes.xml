@@ -9,7 +9,7 @@
 				<include name="Critical"></include>
 				<include name="High"></include>
 				<include name="Sanity"></include>
-				<incude name="Regression"></incude>
+				<include name="Regression"></include>
 				<include name="Smoke"></include>
 			</run>
 		</groups>
