@@ -18,9 +18,7 @@
 			<class name="testCases.LoginPageTestCases"></class>
 			<class name="testCases.PushNotificationTestcases"></class>
 			</classes>
-	</test>
-
-	
+	</test>	
 	 <test name="SanityTest">
 		<parameter name="Browser" value="Edge"></parameter>
 		<classes>
